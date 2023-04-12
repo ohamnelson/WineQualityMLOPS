@@ -33,3 +33,5 @@ dvc repro: this runs the stages in the dvc.yaml file. It checks if the content i
 
 dvc metrics show: This shows the list of your hyper parameters and its metrics
 dvc metrics diff: This shows the difference between various paramters and metrics
+
+tox: It creates a virtual environment for running tests
