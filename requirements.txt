@@ -5,3 +5,4 @@ pandas
 scikit-learn
 pytest
 tox
+flake8 #used to check the structure of your code
