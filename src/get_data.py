@@ -7,6 +7,7 @@ import yaml
 import pandas as pd
 import argparse
 
+
 def read_params(config_path):
     with open(config_path) as yaml_file:
         config = yaml.safe_load(yaml_file)
@@ -15,18 +16,16 @@ def read_params(config_path):
 
 def get_data(config_path):
     config = read_params(config_path)
-    #print(config)
-    # getting the directory for the data given 
+    # print(config)
+    # getting the directory for the data given
     data_path = config["data_source"]["s3_source"]
-    df = pd.read_csv(data_path, sep = ",")
+    df = pd.read_csv(data_path, sep=",")
     return df
 
 
 if __name__ == "__main__":
     args = argparse.ArgumentParser()
-    args.add_argument("--config", default = "params.yaml")
+    args.add_argument("--config", default="params.yaml")
     parsed_args = args.parse_args()
     # parsed_args.config/config_path is set to params.yaml
-    data = get_data(config_path = parsed_args.config)
-
-    
+    data = get_data(config_path=parsed_args.config)

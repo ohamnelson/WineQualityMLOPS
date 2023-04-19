@@ -11,8 +11,9 @@ from sklearn.linear_model import ElasticNet
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from get_data import read_params
-import joblib # used to save the model
+import joblib  # used to save the model
 import json
+
 
 def eval_metrics(actual, predicted):
     """
@@ -24,6 +25,7 @@ def eval_metrics(actual, predicted):
     r2 = r2_score(actual, predicted)
 
     return rmse, mae, r2
+
 
 def train_and_evaluate(config_path):
     config = read_params(config_path)
@@ -48,10 +50,10 @@ def train_and_evaluate(config_path):
     test_x = test.drop(target, axis=1)
 
     # initializing the model parameters
-    lm = ElasticNet(alpha=alpha, 
-                    l1_ratio=l1_ratio, 
+    lm = ElasticNet(alpha=alpha,
+                    l1_ratio=l1_ratio,
                     random_state=random_state)
-    
+
     # fitting the model
     lm.fit(train_x, train_y)
 
@@ -82,14 +84,12 @@ def train_and_evaluate(config_path):
         }
         json.dump(params, f, indent=4)
 
-
     # Create a directiory called saved_model if it doesn't exist
     os.makedirs(model_dir, exist_ok=True)
     # creating a path in the crearted directory
     model_path = os.path.join(model_dir, "model.joblib")
     # Saving the model in the created path
     joblib.dump(lm, model_path)
-
 
 
 if __name__ == "__main__":
