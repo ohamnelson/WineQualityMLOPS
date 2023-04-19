@@ -35,3 +35,19 @@ dvc metrics show: This shows the list of your hyper parameters and its metrics
 dvc metrics diff: This shows the difference between various paramters and metrics
 
 tox: It creates a virtual environment for running tests
+``` bash
+tox
+```
+for rebuilding
+``` bash
+ tox -r
+```
+
+setup commands -
+pip install -e .
+
+building your own package commands -
+``` bash
+python setup.py sdist bdist wheel
+```
+
