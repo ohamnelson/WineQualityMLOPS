@@ -1,25 +1,27 @@
 
 create New virtual Environment
-''' bash
+``` bash
 Conda create -n wineQA python=3.9 -y
-'''
+```
 
 Activate virtual Environment
-''' bash
+``` bash
 Conda activate wineQA 
-'''
+```
 
 Created a requirements.txt file
 
 install the requirements.txt file
-''' bash
+``` bash
 pip install -r requirements.txt
-
+```
 download data from 
 https://drive.google.com/drive/folders/18zqQiCJVgF7uzXgfbIJ-04zgz1ItNfF5?usp=sharing
 
 Pushing code and data to remote repository
+```
 git init
+```
 
 dvc init
 
