@@ -52,4 +52,4 @@ building your own package commands -
 ``` bash
 python setup.py sdist bdist wheel
 ```
-
+The ci-cd file in .github is used as a configuration file for github actions. 
